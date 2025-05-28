@@ -10,7 +10,7 @@ class ShorteningController
 		$url = $_POST['url'];
 
 		if(substr($url, 0, 4) != "http"){
-			$url = "https://www." . $url;
+			$url = "https://" . $url;
 		}
 
 		$return = $model->save($url);
