@@ -1,0 +1,14 @@
+@startuml
+
+class ShorteningForms <<view>>
+class Shortener <<view>>
+class ShorteningController <<control>>
+class ShorteningModel <<entity>>
+class ShorteningDAO <<persistent>>
+
+ShorteningController -- ShorteningForms
+ShorteningController -- Shortener
+ShorteningController --> ShorteningModel
+ShorteningModel --> ShorteningDAO
+
+@enduml

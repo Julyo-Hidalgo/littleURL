@@ -1,0 +1,26 @@
+@import 'config.css';
+
+main div h1{
+	font-size: 4vh;
+	padding: 5%;
+}
+
+input:disabled{
+	color: var(--black);
+}
+
+#copy_tooltip{
+	position: absolute;
+	display: none;
+	background: var(--black);
+	color: var(--white);
+	padding: 1%;
+	margin-top: 1%;
+	margin-left: -5%;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#cp_btn:hover #copy_tooltip{
+	display: block;
+}

@@ -1,0 +1,14 @@
+The littleURL is an URL shortener. It receives a web address and returns an slug (the part of the littleURL's URL after the slash symbol); this is depicted in the figure 1.
+It can "unshorten" an URL. And can track how many clicks the URL had received.
+
+figure 1 - How the shortening works? 
+example_of_an_extra_large_url.com → process → ctn.rf.gd/slug
+source: Own work.
+
+References
+[1] https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+[2] https://chromium.googlesource.com/chromium/src/+/main/docs/security/url_display_guidelines/url_display_guidelines.md
+[2] https://support.microsoft.com/pt-br/topic/o-comprimento-m%C3%A1ximo-da-url-%C3%A9-de-2-083-caracteres-no-internet-explorer-174e7c8a-6666-f4e0-6fd6-908b53c12246
+[3] https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Schemes/data#length_limitations
+[4] https://dev.mysql.com/doc/refman/8.4/en/char.html
+[5] https://github.com/tiagotas/PHP_MVC_Exemplo_v3
