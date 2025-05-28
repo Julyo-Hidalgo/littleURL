@@ -22,7 +22,10 @@
 				
 				<input type="type" id="new_url" value="<?= $newUrl ?>" disabled />
 				<button id="cp_btn" onclick="copyToClipboard()" onmouseout="resetTooltip()">Copy<span id="copy_tooltip">Click to copy</span></button>
-			<div>
+
+				<h2>Long url:</h2>
+				<a href="<?= $url ?>"><?= $url ?></a>
+			</div>
 		</main>
 
 		<?php include VIEW . "Footer.php"; ?>
