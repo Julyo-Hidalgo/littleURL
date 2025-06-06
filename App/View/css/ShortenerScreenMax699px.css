@@ -1,2 +1,9 @@
-@import 'config.css';
+@import 'baseScreenMax699px.css';
 
+h2{
+	padding-top: 3%;
+}
+
+.tooltip{
+	width: 80vw;
+}

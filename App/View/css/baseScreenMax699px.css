@@ -1,0 +1,34 @@
+@import 'config.css';
+
+main{
+	width: 100%;
+	text-align: center;
+}
+
+h1{
+	padding: 3%;
+}
+
+input{
+	padding: 0.5%;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid var(--black);
+}
+
+.button{
+	padding: 1%;
+	border-radius: 10px;
+	color: white;
+	background-color: var(--blue);
+	border: 1px solid var(--black);
+	margin-top: 1%;
+}
+
+p{
+	padding: 1.5%;
+}
+
+a{
+	color: var(--blue);
+}
