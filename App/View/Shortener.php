@@ -16,21 +16,17 @@
 		<?php include VIEW . 'Navigation.php' ?>
 
 		<main>
-			<h1><span class="little-url-span">Little</span>URL</h1>
+			<h1 class="shortened">Your shortened URL:</h1>
+			
+			<input type="type" id="new_url" value="<?= $newUrl ?>" disabled />
+			<button id="cp_btn" class="button">Copy<span id="copy_tooltip_for_large_screen" class="tooltip">Click to copy</span></button>
 
-			<div>
-				<h1 class="shortened">Your shortened URL:</h1>
-				
-				<input type="type" id="new_url" value="<?= $newUrl ?>" disabled />
-				<button id="cp_btn">Copy<span id="copy_tooltip_for_large_screen" class="tooltip">Click to copy</span></button>
-
-				<div class="tooltip_container">
-					<span id="copy_tooltip_for_small_screen" class="tooltip">copied!</span>
-				</div>
-
-				<h2>Long url:</h2>
-				<a href="<?= $url ?>"><?= $url ?></a>
+			<div class="tooltip_container">
+				<span id="copy_tooltip_for_small_screen" class="tooltip">copied!</span>
 			</div>
+
+			<h2>Long url:</h2>
+			<a href="<?= $url ?>"><?= $url ?></a>
 		</main>
 
 		<?php include VIEW . "Footer.php"; ?>
