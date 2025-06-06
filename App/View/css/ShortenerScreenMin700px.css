@@ -1,0 +1,5 @@
+@import 'config.css';
+
+#cp_btn:hover #copy_tooltip_for_large_screen{
+	display: block;
+}

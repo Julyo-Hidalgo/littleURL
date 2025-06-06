@@ -7,8 +7,8 @@
    		<meta name="description" content="Site that shortens URLs" />
    		<meta name="keywords" content="Shorten, Shortening, URL" />
    		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" media="screen and (min-width: 700px)" href="View/css/ShorteningFormsDesktop.css" />
-		<link rel="stylesheet" media="screen and (max-width: 699px)" href="View/css/ShorteningFormsMobile.css" />
+		<link rel="stylesheet" media="screen and (min-width: 700px)" href="/View/css/ShorteningFormsScreenMin700px.css" />
+		<link rel="stylesheet" media="screen and (max-width: 699px)" href="/View/css/ShorteningFormsScreenMax699px.css" />
 	</head>
 
 	<body>

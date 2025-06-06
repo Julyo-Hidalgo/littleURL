@@ -1,5 +1,5 @@
 *{
-	padding:0; margin:0; vertical-align:baseline; list-style:none; border:0; font-size:20px; text-decoration:none;
+	padding:0; margin:0; vertical-align:baseline; list-style:none; border:0; font-size: 20px; text-decoration:none;
 }
 
 :root{
@@ -8,71 +8,11 @@
 	--white: white;
 }
 
-nav{
-	background-color: var(--blue);
-	padding: 1%;
-}
-
-nav ul{
-	width: 50%;
-	position: relative;
-	margin: 0 auto;
-	text-align: center;
-}
-
-nav li{
-	padding: 15px;
-	display: inline-block;
-}
-
-nav a{
-	color: #191716;
-	color: var(--white);
-	font-size: 30px;
-}
-
-nav a:hover{
-	text-decoration: underline;
-}
-
-main{
-	display: flex;
-	flex-direction: column; 
-	align-items: center;
-	justify-content: center;
-	padding: 4.5%;
-	background-color: var(--white);
-	color: var(--black);
-}
-
-main h1{
-	font-size: 30px;
-}
-
-input, button{
-	border: 2px solid var(--black);
-	padding: 5px;
-	border-radius: 10px;
-	margin: 0 2px; 
-}
-
-main div{
-	margin: 6% 0 0 0;
-	text-align: center;
-}
-
-.little-url-span{
-	color: var(--blue);
-	font-size: 20px;
-}
-
-footer{
+.tooltip{
+	display: none;
+	position: absolute;
 	background-color: var(--black);
+	padding: 10px;
+	border-radius: 10px;
 	color: var(--white);
-	padding: 1.65%;
-}
-
-footer a{
-	color: var(--white);
-	text-decoration: underline;
 }
