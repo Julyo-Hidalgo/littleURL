@@ -15,6 +15,12 @@
 		<?php include VIEW . "Navigation.php"; ?>
 
 		<main>
+			<?php 
+				if (isset($error)) {
+					echo '<h1 class="error">Please, insert a valid URL!!!</h1>';
+				}
+			?>
+
 			<h1><span class="little-url-span">Little</span>URL</h1>
 
 			<form action="/form/shortening/save" method="post">

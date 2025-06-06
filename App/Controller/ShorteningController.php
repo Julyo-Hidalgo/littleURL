@@ -9,6 +9,14 @@ class ShorteningController
 
 		$url = $_POST['url'];
 
+		if($url == NULL){
+			$error = true;
+
+			include VIEW . 'ShorteningForms.php';
+
+			exit(1);
+		}
+
 		if(substr($url, 0, 4) != "http"){
 			$url = "https://" . $url;
 		}
