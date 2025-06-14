@@ -1,9 +1,14 @@
 @import 'baseScreenMax699px.css';
 
+.tooltip{
+	width: 80vw;
+}
+
 h2{
 	padding-top: 3%;
 }
 
-.tooltip{
-	width: 80vw;
+main a{
+	display: block;
+	padding-bottom: 3%;
 }

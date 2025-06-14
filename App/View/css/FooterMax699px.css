@@ -1,0 +1,14 @@
+footer{
+	background-color: var(--blue);
+	color: white;
+	display: block;
+}
+
+footer a{
+	color: white;
+	text-decoration: underline white;
+}
+
+footer a:hover{
+	text-decoration: none;
+}

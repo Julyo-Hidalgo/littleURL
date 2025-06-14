@@ -1,0 +1,14 @@
+.navigation{
+	background-color: var(--blue);
+	padding: 2%;
+	text-align: center;
+}
+
+.navigation a{
+	color: white;
+	font-size: 25px;
+}
+
+.navigation a:hover{
+	text-decoration: underline white;
+}
