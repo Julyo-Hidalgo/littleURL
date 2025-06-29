@@ -1,42 +1,43 @@
 <?php
 
+include_once 'Exceptions/DatabaseExceptions.php'; 
+include_once 'Exceptions/BusinessRuleException.php'; 
+
 class ShorteningModel
 {
 	public string $url, $slug;
 
-	private function generateSlug(string $url){
-		$slug = hash("crc32", $url);
-
-		$dao = new ShorteningDAO;
-
-		$check = $dao->selectUrlBySlug($slug);
-
-		if(count($check) != 0){
-			$newSlug = $this->generateSlug($slug);
-			return $newSlug;
-		}
-
-		return $slug;
-	}
-
 	function save(string $url){
-		$this->url = $url;
+		try{
+			$this->url = $url;
 
-		include 'DAO/ShorteningDAO.php'; 
+			include_once 'DAO/ShorteningDAO.php';
 
-		$dao = new ShorteningDAO;
-			
-		$slug = $dao->selectSlugByUrl($url);
-		if (count($slug) != 0){
-			$this->slug = $slug[0];
+			$dao = new ShorteningDAO;
+				
+			$slug = $dao->selectSlugByUrl($url);
+			if (count($slug) != 0){
+				$this->slug = $slug[0];
+				return $this->slug;
+			}
+
+			if(!isset($this->slug))
+				$this->slug = hash("crc32", $url);
+
+			$dao->create($this);
+
 			return $this->slug;
+		}catch(DuplicateEntryException $e){
+			if($e->getField() == "slug"){
+				throw new SlugCrc32CollisionException($e->getValue(), $this->url);
+			}else{
+				print_r($e);
+				exit();
+			}
+		}catch(DatabaseOperationException $e){
+			print_r($e);
+			exit();
 		}
-
-		$this->slug = $this->generateSlug($this->url); 
-
-		$dao->create($this);
-
-		return $this->slug;
 	}
 
 	function searchURL(string $slug){

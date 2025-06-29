@@ -13,12 +13,24 @@ class ShorteningDAO
 	}
 
 	function create(ShorteningModel $model){
-		$stmt = $this->pdo->prepare("INSERT INTO Shortening (url, slug) VALUES (:url, :slug)");
+		try{
+			$stmt = $this->pdo->prepare("INSERT INTO Shortening (url, slug) VALUES (:url, :slug)");
 
-		$stmt->bindParam(":url", $model->url);
-		$stmt->bindParam(":slug", $model->slug);
+			$stmt->bindParam(":url", $model->url);
+			$stmt->bindParam(":slug", $model->slug);
 
-		return $stmt->execute();
+			return $stmt->execute();
+		}catch(PDOException $e) {
+			if($e->getCode() == 23000){
+				$pattern = "/Duplicate entry '(.+?)' for key '(.+?)'/i";
+				preg_match($pattern, $e->getMessage(), $matches);
+
+				throw new DuplicateEntryException($matches[2], $matches[1]);
+			}
+
+			echo $e;
+			exit();
+		}
 	}	
 
 	function selectSlugByUrl(string $url){
